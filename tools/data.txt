@@ -4,8 +4,28 @@ vc3 = VentureCapitalist.new("Joe", 999999999)
 s1 = Startup.new("Twitter", "I should know this", "Social Media")
 s2 = Startup.new("Netflix", "Who Knows", "Entertainment")
 s3 = Startup.new("Facebook", "MZ", "Social Media")
-f1 = FundingRound.new(s1, "Seed", 5000000)
-f2 = FundingRound.new(s2, "Series A", 5000000)
-f3 = FundingRound.new(s3, "Pre-Seed", 5000000)
-f4 = FundingRound.new(s1, "Series B", 5000000)
-f5 = FundingRound.new(s2, "Seed", 5000000)
+f1 = FundingRound.new(s1, "Seed", vc1, 5000000)
+f2 = FundingRound.new(s2, "Series A", vc2, 5000000)
+f3 = FundingRound.new(s3, "Pre-Seed", vc3, 5000000)
+f4 = FundingRound.new(s1, "Series B", vc2, 5000000)
+f5 = FundingRound.new(s2, "Seed", vc3, 5000000)
+
+vc1 = VentureCapitalist.new("VC1", 5)
+vc2 = VentureCapitalist.new("VC2", 5000000000)
+s1 = Startup.new("Twitter", "Founder1", "Domain1")
+s2 = Startup.new("Netflix", "Founder2", "Domain2")
+f1 = FundingRound.new(s1, "Type1", vc1, 5000000)
+f2 = FundingRound.new(s2, "Type2", vc2, 10000000)
+f3 = FundingRound.new(s2, "Type3", vc1, 2000000)
+
+vc1.offer_contract(s2, "Type4", 10000000000)
+vc1.funding_rounds
+vc1.portfolio
+vc1.biggest_investment
+vc1.invested("Domain2")
+
+
+s1.sign_contract(vc2, "Type5", 50000)
+s1.my_funding_rounds
+s1.num_funding_rounds
+s1.total_funds
