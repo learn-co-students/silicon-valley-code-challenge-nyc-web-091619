@@ -37,8 +37,8 @@ class VentureCapitalist
   end
 
   def invested(domain)
-    binding.pry
-    doms = self.funding_rounds.select {|fr| Startup.domain == domain}
+    # binding.pry
+    doms = self.funding_rounds.select {|fr| fr.startup.domain == domain}
     doms.map{|fr| fr.investment}.reduce{|sum, investment| sum + investment}
     
   end
